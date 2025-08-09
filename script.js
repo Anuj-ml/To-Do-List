@@ -1,8 +1,12 @@
 
-    let tasks = [];
-      const icon = document.getElementById("themeIcon");
+    const tasks = [];
+    const html = document.querySelector("html");
+    const icon = document.getElementById("themeIcon");
+    const list = document.getElementById("taskList");
+    const input = document.getElementById("taskInput");
+    const addTaskBtn = document.querySelector(".addTaskBtn");
     function addTask() {
-      const input = document.getElementById("taskInput");
+
       const task = input.value.trim();
       if (task !== "") {
         tasks.push(task);
@@ -33,12 +37,26 @@
     }
 
     function displayTasks() {
-      const list = document.getElementById("taskList");
+
       list.innerHTML = "";
 
       tasks.forEach((task, index) => {
         const li = document.createElement("li");
-        li.className = "bg-purple-50 dark:bg-gray-800 rounded-xl px-4 py-3 flex justify-between items-center hover:bg-purple-100 dark:hover:bg-gray-700 transition";
+        li.className = "bg-purple-100  rounded-xl px-4 py-3 flex justify-between items-center dark:bg-gray-700 transition ";
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.className = "w-5 h-5 accent-blue-500 dark:accent-yellow-400";
+        checkbox.addEventListener("change", () => {
+          if (html.classList.contains("dark")) {
+            li.classList.toggle("bg-gray-800", checkbox.checked);
+          }
+          else {
+            li.classList.toggle("bg-purple-200", checkbox.checked);
+          }
+          span.classList.toggle("line-through", checkbox.checked);
+          span.classList.toggle("text-gray-500", checkbox.checked);
+        });
 
         const span = document.createElement("span");
         span.textContent = task;
@@ -59,15 +77,19 @@
         iconsDiv.appendChild(editBtn);
         iconsDiv.appendChild(delBtn);
 
+        li.appendChild(checkbox);
         li.appendChild(span);
         li.appendChild(iconsDiv);
         list.appendChild(li);
       });
     }
+    input.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        addTaskBtn.click();
+      }
+    });
 
     function toggleDarkMode() {
-      const html = document.querySelector("html");
-      const icon = document.getElementById("themeIcon");
       html.classList.toggle("dark");
 
       if (html.classList.contains("dark")) {

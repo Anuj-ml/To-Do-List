@@ -15,9 +15,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="bg-gradient-to-r from-blue-200 to-purple-300 dark:from-gray-900 dark:to-gray-800 min-h-screen flex items-center justify-center p-4 sm:p-8 ">
+<body class="bg-gradient-to-r from-blue-300 to-purple-300 dark:from-gray-900 dark:to-gray-800 min-h-screen flex items-center justify-center p-4 sm:p-8 ">
 
-    <div class="bg-white dark:bg-gray-900 text-gray-800 dark:text-white shadow-xl rounded-2xl w-full max-w-md sm:max-w-lg lg:max-w-xl p-6 space-y-7">
+    <div class="bg-white bg-opacity-50 bg-blur-xl dark:bg-gray-800 dark:bg-opacity-75 text-gray-800 dark:text-white shadow-xl dark:shadow-[2px_2px_10px_#ffffff5f] rounded-2xl w-full max-w-md sm:max-w-lg lg:max-w-xl p-6 space-y-7">
 
       <div class="flex items-center justify-between">
         <h1 class="text-2xl sm:text-3xl font-bold text-purple-700 dark:text-purple-300">📝 To-Do List</h1>
@@ -27,8 +27,8 @@
       </div>
 
       <div class="flex flex-col sm:flex-row gap-3">
-        <input id="taskInput" class="flex-1 px-4 py-2 border rounded-full focus:outline-none focus:border-purple-500 focus:border-[3px] dark:bg-gray-700 dark:text-white" placeholder="Enter a new task" />
-        <button onclick="addTask()" class="px-5 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 hover:scale-105">Add</button>
+        <input id="taskInput" class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:border-purple-500 focus:border-[3px] dark:bg-gray-700 dark:text-white" placeholder="Add a new task..." />
+        <button onclick="addTask()" class="addTaskBtn px-5 py-2 text-white rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 hover:scale-105">Add</button>
       </div>
 
       <ul id="taskList" class="space-y-3 max-h-[300px] overflow-y-auto"></ul>
