@@ -44,9 +44,11 @@
         const li = document.createElement("li");
         li.className = "bg-purple-100  rounded-xl px-4 py-3 flex justify-between items-center dark:bg-gray-700 transition ";
 
+        const checkdiv = document.createElement("div");
+        checkdiv.className = "flex items-center gap-3 pr-3";
         const checkbox = document.createElement("input");
         checkbox.type = "checkbox";
-        checkbox.className = "w-5 h-5 accent-blue-500 dark:accent-yellow-400";
+        checkbox.className = "w-5 h-5 accent-indigo-500 dark:accent-yellow-400";
         checkbox.addEventListener("change", () => {
           if (html.classList.contains("dark")) {
             li.classList.toggle("bg-gray-800", checkbox.checked);
@@ -57,6 +59,8 @@
           span.classList.toggle("line-through", checkbox.checked);
           span.classList.toggle("text-gray-500", checkbox.checked);
         });
+
+        checkdiv.appendChild(checkbox);
 
         const span = document.createElement("span");
         span.textContent = task;
@@ -77,7 +81,7 @@
         iconsDiv.appendChild(editBtn);
         iconsDiv.appendChild(delBtn);
 
-        li.appendChild(checkbox);
+        li.appendChild(checkdiv);
         li.appendChild(span);
         li.appendChild(iconsDiv);
         list.appendChild(li);
