@@ -1,0 +1,14 @@
+
+  .dark body {
+    background: radial-gradient(at 20% 30%, #6b375f, transparent 40%),
+                radial-gradient(at 70% 20%, #d17b3f, transparent 50%),
+                radial-gradient(at 80% 80%, #1b2c4a, transparent 60%),
+                #0d1520;
+    }
+  body {
+    background: radial-gradient(at 20% 30%, #f9c6d2, transparent 40%),
+                radial-gradient(at 70% 20%, #fbd7a2, transparent 50%),
+                radial-gradient(at 80% 80%, #b5d8f7, transparent 60%),
+                #f4f4f4;    
+  }
+

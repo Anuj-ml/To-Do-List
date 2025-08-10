@@ -71,11 +71,11 @@
         iconsDiv.className = "flex gap-4 text-lg";
 
         const editBtn = document.createElement("i");
-        editBtn.className = "fas fa-pen text-blue-500 hover:text-blue-700 cursor-pointer";
+        editBtn.className = "fas fa-pen text-blue-500 dark:text-blue-400 hover:text-blue-700 cursor-pointer";
         editBtn.onclick = () => editTask(index);
 
         const delBtn = document.createElement("i");
-        delBtn.className = "fas fa-trash text-red-500 hover:text-red-700 cursor-pointer";
+        delBtn.className = "fas fa-trash text-red-500 dark:text-red-400 hover:text-red-700 cursor-pointer";
         delBtn.onclick = () => deleteTask(index);
 
         iconsDiv.appendChild(editBtn);
