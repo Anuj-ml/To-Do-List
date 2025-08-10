@@ -48,13 +48,15 @@
         checkdiv.className = "flex items-center gap-3 pr-3";
         const checkbox = document.createElement("input");
         checkbox.type = "checkbox";
-        checkbox.className = "w-5 h-5 accent-indigo-500 dark:accent-yellow-400";
+        checkbox.className = "check w-5 h-5 accent-indigo-500 dark:accent-yellow-400";
         checkbox.addEventListener("change", () => {
-          if (html.classList.contains("dark")) {
-            li.classList.toggle("bg-gray-800", checkbox.checked);
+          if(checkbox.checked) {
+            li.classList.replace("bg-purple-100", "bg-purple-200");
+            li.classList.replace("dark:bg-gray-700", "dark:bg-gray-600");
           }
           else {
-            li.classList.toggle("bg-purple-200", checkbox.checked);
+            li.classList.replace("bg-purple-200", "bg-purple-100");
+            li.classList.replace("dark:bg-gray-600", "dark:bg-gray-700");
           }
           span.classList.toggle("line-through", checkbox.checked);
           span.classList.toggle("text-gray-500", checkbox.checked);
