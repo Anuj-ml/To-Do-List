@@ -45,7 +45,7 @@
 
       tasks.forEach((task, index) => {
         const li = document.createElement("li");
-        li.className = "bg-purple-100  rounded-xl px-4 py-3 flex justify-between items-center dark:bg-gray-700 transition ";
+        li.className = "bg-purple-100  rounded-xl px-4 py-3 flex justify-between items-center hover:bg-opacity-75 dark:hover:bg-opacity-85 dark:bg-gray-800 transition ";
 
         const checkdiv = document.createElement("div");
         checkdiv.className = "flex items-center gap-3 pr-3";
@@ -55,11 +55,11 @@
         checkbox.addEventListener("change", () => {
           if(checkbox.checked) {
             li.classList.replace("bg-purple-100", "bg-purple-200");
-            li.classList.replace("dark:bg-gray-700", "dark:bg-gray-600");
+            li.classList.replace("dark:bg-gray-800", "dark:bg-gray-700");
           }
           else {
             li.classList.replace("bg-purple-200", "bg-purple-100");
-            li.classList.replace("dark:bg-gray-600", "dark:bg-gray-700");
+            li.classList.replace("dark:bg-gray-700", "dark:bg-gray-800");
           }
           span.classList.toggle("line-through", checkbox.checked);
           span.classList.toggle("text-gray-500", checkbox.checked);
@@ -70,7 +70,6 @@
         const span = document.createElement("span");
         span.textContent = task;
         span.className = "cursor-pointer text-base sm:text-lg";
-        span.addEventListener("click", toggleComplete);
 
         const iconsDiv = document.createElement("div");
         iconsDiv.className = "flex gap-4 text-lg";
