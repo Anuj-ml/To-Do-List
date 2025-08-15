@@ -1,5 +1,5 @@
 
-    const tasks = [];
+    const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
     const html = document.querySelector("html");
     const icon = document.getElementById("themeIcon");
     const list = document.getElementById("taskList");
@@ -10,6 +10,7 @@
       const task = input.value.trim();
       if (task !== "") {
         tasks.push(task);
+        localStorage.setItem("tasks", JSON.stringify(tasks));
         input.value = "";
         displayTasks();
       }
@@ -17,6 +18,7 @@
 
     function deleteTask(index) {
       tasks.splice(index, 1);
+      localStorage.setItem("tasks", JSON.stringify(tasks));
       displayTasks();
     }
 
@@ -32,6 +34,7 @@
       const newTask = prompt("Edit your task:", tasks[index]);
       if (newTask !== null && newTask.trim() !== "") {
         tasks[index] = newTask.trim();
+        localStorage.setItem("tasks", JSON.stringify(tasks));
         displayTasks();
       }
     }
@@ -104,3 +107,4 @@
         icon.classList.replace("fa-sun", "fa-moon");        
       }
     }
+    displayTasks();
